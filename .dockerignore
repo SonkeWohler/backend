@@ -1,0 +1,9 @@
+.git
+.cache
+
+*.sw[a-z]
+*~
+
+__pycache__
+bin
+lib
