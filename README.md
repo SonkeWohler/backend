@@ -12,11 +12,17 @@ inside Docker.
 
 ## Running
 
-It should simply run as defined in `run_docker.sh`.  On Linux you can just run
-the following:
+You should just be able to build and run the cocker container without further
+issues.
+
+On Linux you can just run the following:
+
 ```
-source run_docker.sh
+source build_and_run_docker.sh
 ```
+
+In case the docker service isn't running yet that will start it, but if it is
+running already that doesn't make a difference.
 
 ### Requirements
 
