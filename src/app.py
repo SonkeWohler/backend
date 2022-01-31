@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Response
 app = Flask(__name__)
 
 
@@ -9,7 +9,12 @@ def rude():
 
 @app.route('/hello')
 def hello_world():
-    return {"message": "Hello World"}
+    # https://stackoverflow.com/questions/25860304/how-do-i-set-response-headers-in-flask
+    # solution to issue I had with this thing:
+    # https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSMissingAllowOrigin
+    response = Response('{"message": "Hello World" }')
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 
 if __name__ == '__main__':
